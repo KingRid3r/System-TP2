@@ -3,7 +3,6 @@
 * Aix-Marseille Université, LSIS UMR7296
 * romain.raffin[chez]lsis.org
 **/
-#pragma once
 
 #include <deque>
 
@@ -32,3 +31,8 @@ public:
 
     friend std::ostream& operator<<(std::ostream&, const polynomial&);
 };
+
+template<class Archive> void serialize(Archive & archive, polynomial & m)
+{
+	archive( m.expression);
+}

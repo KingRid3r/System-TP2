@@ -15,12 +15,12 @@ all :: $(EXECSPP)
 .cpp.o :
 	$(CXX) -c $(CXXFLAGS) $*.cpp
 
-$(EXECSPP): sockinte sockcli sockserv
+$(EXECSPP): client_serial server_serial
 
-client_serial : cli_req.o monomial.o polynomial.o sockinte.o
+client_serial : client_serial.o cli_req.o monomial.o polynomial.o
 	$(CXX) -o $@ $^ $(LIBS)
 
-server_serial : serv_req.o monomial.o polynomial.o sockserv.o
+server_serial : server_serial.o serv_req.o monomial.o polynomial.o
 	$(CXX) -o $@ $^ $(LIBS)
 
 depends :

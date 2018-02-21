@@ -3,7 +3,6 @@
 * Aix-Marseille Université, LSIS UMR7296
 * romain.raffin[chez]lsis.org
 **/
-#pragma once
 
 #include <ostream>
 
@@ -37,3 +36,8 @@ public:
     // sortie ostream
     friend std::ostream& operator<<(std::ostream&, const monomial&);
 };
+
+template<class Archive> void serialize(Archive & archive, monomial & m)
+{
+	archive( m.getCoefficient(), m.getDegree());
+}

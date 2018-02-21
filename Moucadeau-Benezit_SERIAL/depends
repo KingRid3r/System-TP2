@@ -1,0 +1,9 @@
+client_serial.o: client_serial.cpp cli_req.hpp monomial.hpp \
+ polynomial.hpp
+cli_req.o: cli_req.cpp cli_req.hpp
+monomial.o: monomial.cpp monomial.hpp
+polynomial.o: polynomial.cpp polynomial.hpp monomial.hpp
+server_serial.o: server_serial.cpp serv_req.hpp monomial.hpp \
+ polynomial.hpp
+serv_req.o: serv_req.cpp serv_req.hpp
+testPolynome.o: testPolynome.cpp monomial.hpp polynomial.hpp
